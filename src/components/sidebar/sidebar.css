@@ -22,9 +22,9 @@
     margin: 10px;
     padding: 5px;
     width: 80%;
-    border-top: 1px solid #ebebeb;
-    border-bottom: 1px solid;
-    font-family: 'Valera Round', sans-serf;
+    /* border-top: 1px solid #ebebeb; */
+    border-bottom: 2px solid #dddddd;
+    font-family: 'Varela Round', sans-serf;
     font-size: 16px;
     color: #222;
     font-weight: 600;

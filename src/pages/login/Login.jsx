@@ -4,6 +4,7 @@ import "./login.css";
 export default function Login() {
   return (
     <div className="login">
+      <span className="loginTitle">Login</span>
       <form action="" className="loginForm">
         <label htmlFor="">Email</label>
         <input

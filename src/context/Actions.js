@@ -28,3 +28,15 @@ export const UpdateFailure = () => ({
     type: "UPDATE_FAILURE",
 });
 
+export const DeleteStart = (userCredentials) => ({
+    type: "DELETE_START",
+});
+
+export const DeleteSuccess = () => ({
+    type: "DELETE_SUCCESS",
+});
+
+export const DeleteFailure = () => ({
+    type: "DELETE_FAILURE",
+});
+

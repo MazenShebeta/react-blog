@@ -11,12 +11,12 @@ export default function Settings() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
+  const [deleteSuccess, setDeleteSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
   const PF = "http://localhost:8000/images/";
 
   const handleSubmit = async (e) => {
-    console.log("submit");
     e.preventDefault();
     dispatch({ type: "UPDATE_START" });
     const updatedUser = {
@@ -36,7 +36,6 @@ export default function Settings() {
       } catch (err) {}
     }
     try {
-      console.log("try");
       const res = await axios.put("/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
@@ -46,12 +45,30 @@ export default function Settings() {
     }
   };
 
+  const handleDelete = async () => {
+    dispatch({ type: "DELETE_START" });
+    const deleteUser = {
+      userID: user._id,
+      password,
+    }
+    try {
+      const res = await axios.delete(`/users/${user._id}`, {data: deleteUser});
+      if(res.status === 200) {
+        setDeleteSuccess(true);
+        dispatch({ type: "DELETE_SUCCESS" });
+        window.location.replace("/");
+      }
+    } catch (err) {
+      dispatch({ type: "DELETE_FAILURE" });
+    }
+  }
+
   return (
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <div className="settingsTitleUpdate">Update Your Account</div>
-          <div className="settingsTitleDelete">Delete Your Account</div>
+          <div className="settingsTitleDelete" onClick={handleDelete}>Delete Your Account</div>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label htmlFor="">ProfilePicture</label>

@@ -40,12 +40,22 @@
   .loginButton {
     margin-top: 20px;
     cursor: pointer;
-    background-color: lightcoral;
+    background-color: teal;
     color: white;
     padding: 10px;
     border: none;
     border-radius: 10px;
     text-align: center;
+  }
+
+  .loginButton:hover {
+    background-color: lightcoral;
+    transition: all 0.5s ease;
+  }
+
+  .loginButton:disabled{
+    background-color: grey;
+    cursor: not-allowed;
   }
   
   .loginRegisterButton {

@@ -6,10 +6,10 @@ export default function Header() {
     <div className='header'>
         <div className="headerTitles">
             <span className='headerTitleSm'>
-                React & Node
+                blogging social network
             </span>
             <span className='headerTitleLg'>
-                Blog
+                Blogarista
             </span>
         </div>
         <img className='headerImg' 

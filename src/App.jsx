@@ -7,9 +7,12 @@ import Settings from "./pages/settings/Settings";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "./context/Context";
 
 function App() {
-  const user = false;
+  const { user } = useContext(Context);
+  
   return (
     <Router>
       <TopBar />
@@ -17,9 +20,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={user ? <Home /> : <Login />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />
-        <Route path="/settings" element={user? <Settings /> : <Login />} />
+        <Route path="/settings" element={user ? <Settings /> : <Login />} />
         <Route path="/post/:postId" element={<Single />} />
-        <Route path="/write" element={user? <Write /> : <Login />} />
+        <Route path="/write" element={user ? <Write /> : <Login />} />
       </Routes>
     </Router>
   );

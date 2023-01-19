@@ -6,7 +6,7 @@ import { Context } from "../../context/Context";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:8000/images/";
+  const PF = "https://blogarista-api.onrender.com/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });

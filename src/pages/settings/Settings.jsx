@@ -14,7 +14,7 @@ export default function Settings() {
   const [deleteSuccess, setDeleteSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:8000/images/";
+  const PF = "https://blogarista-api.onrender.com/images/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

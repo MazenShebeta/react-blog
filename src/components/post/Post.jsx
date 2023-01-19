@@ -3,7 +3,7 @@ import "./post.css";
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  const PF = "http://localhost:8000/images/";
+  const PF = "https://blogarista-api.onrender.com/images/";
   return (
     <div className="post">
       <Link to={`/post/${post._id}`} className="link">

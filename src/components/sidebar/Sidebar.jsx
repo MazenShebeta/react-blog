@@ -8,7 +8,7 @@ export default function Sidebar() {
   const [cat, setCat] = useState([]);
   useEffect(() => {
     const fetchCat = async () => {
-      const res = await axios.get("/categories");
+      const res = await axios.get("https://blogarista-api.onrender.com/api/categories");
       setCat(res.data);
     };
     fetchCat();

@@ -18,7 +18,7 @@ export default function Register() {
         alert("Please fill all the fields");
         return;
       }
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post("https://blogarista-api.onrender.com/api/auth/register", {
         username,
         email,
         password,

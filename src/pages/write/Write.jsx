@@ -25,13 +25,13 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        axios.post("/upload", data);
+        axios.post("https://blogarista-api.onrender.com/api/upload", data);
       } catch (err) {
         console.log(err);
       }
     }
     try {
-      const res = await axios.post("/posts", newPost);
+      const res = await axios.post("https://blogarista-api.onrender.com/api/posts", newPost);
       console.log(res)
       console.log(res.data)
       console.log(res.data._id)

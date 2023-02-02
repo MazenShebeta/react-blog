@@ -6,7 +6,8 @@ export default function Post({ post }) {
   const PF = "https://blogarista-api.onrender.com/images/";
   return (
     <div className="post">
-      <Link to={`/post/${post._id}`} className="link">
+      {/* no photos until we add disk to backend */}
+      {/* <Link to={`/post/${post._id}`} className="link">
         {post.photo ? (
           <img className="postImg" src={PF + post.photo} alt="Post Photo" />
         ) : (
@@ -16,7 +17,7 @@ export default function Post({ post }) {
             alt="Post Photo"
           />
         )}
-      </Link>
+      </Link> */}
 
       <div className="postInfo">
         <div className="postCats">

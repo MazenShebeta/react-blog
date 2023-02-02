@@ -32,11 +32,17 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("https://blogarista-api.onrender.com/api/upload", data);
+        await axios.post(
+          "https://blogarista-api.onrender.com/api/upload",
+          data
+        );
       } catch (err) {}
     }
     try {
-      const res = await axios.put("https://blogarista-api.onrender.com/api/users/" + user._id, updatedUser);
+      const res = await axios.put(
+        "https://blogarista-api.onrender.com/api/users/" + user._id,
+        updatedUser
+      );
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
       window.location.replace("/settings");
@@ -50,10 +56,12 @@ export default function Settings() {
     const deleteUser = {
       userID: user._id,
       password,
-    }
+    };
     try {
-      const res = await axios.delete(`/users/${user._id}`, {data: deleteUser});
-      if(res.status === 200) {
+      const res = await axios.delete(`/users/${user._id}`, {
+        data: deleteUser,
+      });
+      if (res.status === 200) {
         setDeleteSuccess(true);
         dispatch({ type: "DELETE_SUCCESS" });
         window.location.replace("/");
@@ -61,17 +69,20 @@ export default function Settings() {
     } catch (err) {
       dispatch({ type: "DELETE_FAILURE" });
     }
-  }
+  };
 
   return (
     <div className="settings">
       <div className="settingsWrapper">
         <div className="settingsTitle">
           <div className="settingsTitleUpdate">Update Your Account</div>
-          <div className="settingsTitleDelete" onClick={handleDelete}>Delete Your Account</div>
+          <div className="settingsTitleDelete" onClick={handleDelete}>
+            Delete Your Account
+          </div>
         </div>
         <form className="settingsForm" onSubmit={handleSubmit}>
-          <label htmlFor="">ProfilePicture</label>
+          {/* no images until we add disk to backend */}
+          {/* <label htmlFor="">ProfilePicture</label>
           <div className="settingsPP">
             <img
               src={file ? URL.createObjectURL(file) : PF + user.profilePic}
@@ -87,7 +98,7 @@ export default function Settings() {
               style={{ display: "none" }}
               onChange={(e) => setFile(e.target.files[0])}
             />
-          </div>
+          </div> */}
           <label>Username</label>
           <input
             type="text"

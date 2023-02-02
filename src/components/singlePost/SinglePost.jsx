@@ -54,13 +54,13 @@ export default function SinglePost() {
   return (
     <div className="singlePost">
       <div className="singlePostWrapper">
-        {post.photo && (
+        {/* {post.photo && (
           <img
             src={PF + post.photo}
             alt="Post Photo"
             className="singlePostImg"
           />
-        )}
+        )} */}
         {updateMode ? (
           <input
             type="text"

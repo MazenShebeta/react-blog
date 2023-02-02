@@ -6,7 +6,7 @@ import { Context } from "../../context/Context";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "https://blogarista-api.onrender.com/images/";
+  // const PF = "https://blogarista-api.onrender.com/images/";
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -46,7 +46,7 @@ export default function TopBar() {
       <div className="topRight">
         {user ? (
             <Link className="topLink" to="/settings">
-              <img className="topImg" src={PF + user.profilePic} alt="" />
+              {/* <img className="topImg" src={PF + user.profilePic} alt="" /> */}
             <p className="topName">{user.username}</p>
             </Link>
         ) : (

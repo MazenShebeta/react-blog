@@ -50,9 +50,10 @@ export default function Write() {
       )}
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
-          <label htmlFor="fileInput">
+          {/* no images until we add disk to backend */}
+          {/* <label htmlFor="fileInput">
             <i className="writeIcon fas fa-plus"></i>
-          </label>
+          </label> */}
           <input
             type="file"
             id="fileInput"
